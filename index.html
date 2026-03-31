@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeAI Advisor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-navy: #0e2143;
+            --text-main: #1a1a1a;
+            --text-muted: #666;
+            --bg-gradient: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            color: var(--text-main);
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background: transparent;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .btn-auth {
+            background-color: var(--primary-navy);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Input Section */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .input-group label span {
+            font-weight: 400;
+            color: var(--text-muted);
+            text-transform: none;
+        }
+
+        .text-box {
+            width: 100%;
+            height: 280px;
+            padding: 15px;
+            border: 1.5px solid #b0b8c9;
+            border-radius: 8px;
+            background: white;
+            font-size: 14px;
+            line-height: 1.5;
+            resize: none;
+            box-sizing: border-box;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .btn-upload {
+            background-color: var(--primary-navy);
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .btn-upload:hover {
+            background-color: #1a3a7a;
+        }
+
+        
+        .action-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .action-card {
+            background-color: var(--primary-navy);
+            color: white;
+            border: none;
+            padding: 25px 10px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 15px;
+            box-shadow: 0 8px 20px rgba(14, 33, 67, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .action-card:hover {
+            transform: translateY(-2px);
+            background-color: #162f5a;
+        }
+
+        .footer-text {
+            text-align: center;
+            color: #333;
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <i class="fa-solid fa-file-circle-check"></i>
+            Resume AI Advisor
+        </div>
+        
+        
+    </header>
+
+    <div class="container">
+        <div class="input-grid">
+            <div class="input-group">
+                <label>Your Resume <span>(Paste or Upload PDF)</span></label>
+                <textarea id="resume-text" class="text-box" placeholder="Paste your resume here..."></textarea>
+                
+                <button type="button" class="btn-upload" id="upload-trigger">Upload File</button>
+                <input type="file" id="real-file-input" style="display: none;" accept=".txt,.pdf">
+            </div>
+
+            <div class="input-group">
+                <label>Job Description <span>(Paste details here)</span></label>
+                <textarea id="jd-text" class="text-box" placeholder="Paste the Job Description here..."></textarea>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <button class="action-card analysis-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                MISSING SKILLS
+            </button>
+            <button class="action-card analysis-btn">
+                <i class="fa-solid fa-arrows-left-right-to-line"></i>
+                GAPS
+            </button>
+            <button class="action-card analysis-btn">
+                <i class="fa-solid fa-folder-open"></i>
+                PROJECTS
+            </button>
+            <button class="action-card analysis-btn">
+                <i class="fa-regular fa-lightbulb"></i>
+                SUGGESTIONS
+            </button>
+        </div>
+
+        <p id="result-display" class="footer-text">Enter details above and click a button for personalized analysis.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
