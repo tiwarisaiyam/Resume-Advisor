@@ -1,0 +1,41 @@
+Job Title: AI/ML Engineer
+Location: (e.g., Remote / Bangalore / Hybrid)
+Experience: 0–3 years (or adjust as needed)
+Employment Type: Full-time
+Job Overview
+
+We are looking for a passionate and skilled AI/ML Engineer to design, develop, and deploy machine learning models and AI-driven solutions. You will work on real-world problems, build scalable systems, and collaborate with cross-functional teams to integrate intelligent features into products.
+
+Key Responsibilities
+Develop and implement machine learning models for prediction, classification, and recommendation systems
+Work with large datasets: data cleaning, preprocessing, and feature engineering
+Build, train, and optimize models using frameworks like TensorFlow, PyTorch, or Scikit-learn
+Deploy ML models into production using APIs or cloud platforms
+Monitor model performance and improve accuracy over time
+Collaborate with software engineers, product managers, and data teams
+Stay updated with the latest advancements in AI/ML
+Required Skills
+Strong knowledge of Python
+Understanding of Machine Learning algorithms (Regression, Classification, Clustering)
+Familiarity with Deep Learning concepts
+Experience with libraries like TensorFlow / PyTorch / Scikit-learn
+Knowledge of data structures & algorithms
+Basic understanding of statistics and probability
+Experience with SQL / databases
+Preferred Skills
+Experience with NLP (Natural Language Processing) or Computer Vision
+Knowledge of LLMs, Transformers, or Generative AI
+Familiarity with MLOps tools (Docker, Kubernetes, CI/CD)
+Experience with cloud platforms (AWS, GCP, Azure)
+Exposure to FastAPI / Flask for model deployment
+Qualifications
+Bachelor’s degree in Computer Science, AI, Data Science, or related field
+Relevant projects or internships in AI/ML
+Bonus Points
+Hands-on projects (e.g., Resume parser, Chatbot, Recommendation system)
+Participation in hackathons or Kaggle competitions
+Open-source contributions
+What We Offer
+Opportunity to work on cutting-edge AI technologies
+Learning and growth environment
+Competitive salary and flexible work culture
